@@ -28,7 +28,7 @@ description: "摘要（可选）"
 
 ## 本地预览
 
-建议使用 Ruby 3.1（与 GitHub Pages/Jekyll 工作流保持一致）。
+建议使用 Ruby 3.3（与 CI 保持一致）。
 
 ```bash
 bundle install
