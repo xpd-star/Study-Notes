@@ -1,43 +1,25 @@
-# Study-Notes（Jekyll + GitHub Pages）
+# Study-Notes
 
-本仓库用于通过 Markdown 编写文章，并通过 GitHub Pages 发布到：
-
-`https://<username>.github.io/Study-Notes/`
+学习笔记与技术沉淀，使用 Markdown 维护，直接在 GitHub 仓库中阅读。
 
 ## 目录结构
 
-- `_posts/`：文章（文件名必须为 `YYYY-MM-DD-title.md`）
-- `_layouts/`：布局（`default.html` / `post.html` / `archive.html`）
-- `_includes/`：复用片段
-- `assets/`：静态资源（CSS/JS/图片）
-- `.github/workflows/jekyll.yml`：Actions 自动构建与部署
+- [_posts](./_posts)：博客/笔记 Markdown（建议按 `YYYY-MM-DD-title.md` 命名）
+- [assets/images](./assets/images)：图片资源（在 Markdown 中引用）
+- [README.md](./README.md)：项目说明
+- [LICENSE](./LICENSE)：许可证
 
-## 写作规范
+## 新增一篇笔记
 
-文章示例：
+1. 在 `_posts/` 下新建文件，例如：`2026-04-19-my-first-note.md`
+2. 直接使用 Markdown 编写内容
+3. 引用图片（推荐相对路径）：
 
-```yaml
----
-layout: post
-title: "标题"
-date: 2026-04-19 10:00:00 +0800
-tags: [tag1, tag2]
-description: "摘要（可选）"
----
+```md
+![示例图片](../assets/images/citeImage.png)
 ```
 
-## 本地预览
+## 阅读方式
 
-建议使用 Ruby 3.3（与 CI 保持一致）。
-
-```bash
-bundle install
-bundle exec jekyll serve
-```
-
-本地访问：`http://127.0.0.1:4000/Study-Notes/`
-
-## GitHub Pages 部署
-
-1. 仓库 Settings → Pages → Build and deployment 选择 `GitHub Actions`
-2. 推送到 `main` 分支后会自动构建并部署
+- 进入 `_posts/` 目录按文件列表阅读
+- 或使用 GitHub 的搜索功能按关键字检索
