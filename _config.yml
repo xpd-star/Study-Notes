@@ -4,9 +4,7 @@ baseurl: "/Study-Notes"
 url: ""
 timezone: "Asia/Shanghai"
 markdown: kramdown
-theme: minima
 permalink: "/:year/:month/:day/:title/"
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-
