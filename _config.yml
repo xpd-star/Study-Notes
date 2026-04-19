@@ -5,6 +5,7 @@ url: ""
 timezone: "Asia/Shanghai"
 markdown: kramdown
 permalink: "/:year/:month/:day/:title/"
+repository: xpd-star/Study-Notes
 plugins:
   - jekyll-feed
   - jekyll-sitemap
