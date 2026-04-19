@@ -45,7 +45,15 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: |
+          set -o pipefail
+          if ! bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" 2>&1 | tee jekyll-build.log; then
+            echo "::error::Jekyll build failed. Key lines from log:"
+            { grep -E "(Error:|Liquid Exception:|YAML Exception:|Configuration file:|Dependency Error:)" -n jekyll-build.log | head -n 40; echo "--- tail ---"; tail -n 40 jekyll-build.log; } | while IFS= read -r line; do
+              echo "::error::${line}"
+            done
+            exit 1
+          fi
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
