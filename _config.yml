@@ -1,0 +1,12 @@
+title: "Study-Notes"
+description: "学习笔记与技术沉淀"
+baseurl: "/Study-Notes"
+url: ""
+timezone: "Asia/Shanghai"
+markdown: kramdown
+theme: minima
+permalink: "/:year/:month/:day/:title/"
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+

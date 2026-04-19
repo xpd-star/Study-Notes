@@ -1,0 +1,22 @@
+---
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <div class="site">
+      {% include header.html %}
+      <main class="container" role="main">
+        {% if page.layout != 'post' %}
+          <h1 class="page-title">{{ page.title }}</h1>
+        {% endif %}
+        <div class="content">
+          {{ content }}
+        </div>
+      </main>
+      {% include footer.html %}
+    </div>
+  </body>
+</html>
