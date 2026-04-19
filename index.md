@@ -30,7 +30,9 @@ permalink: /
 <div class="post-list">
   {% for post in posts limit: 20 %}
     {% assign tag_text = post.tags | join: ' ' %}
-    <article class="post-card" data-search="item" data-search-text="{{ post.title | append: ' ' | append: tag_text | append: ' ' | append: post.description | default: '' | escape }}">
+    {% assign desc_text = post.description | default: '' %}
+    {% capture search_text %}{{ post.title }} {{ tag_text }} {{ desc_text }}{% endcapture %}
+    <article class="post-card" data-search="item" data-search-text="{{ search_text | escape }}">
       <div class="post-card__meta">
         <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
         {% if post.tags and post.tags.size > 0 %}
