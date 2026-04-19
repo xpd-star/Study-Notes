@@ -1,0 +1,10 @@
+{
+  "remote_name": "origin",
+  "log_file": "logs/git-sync.log",
+  "network_check": {
+    "enabled": true,
+    "host": "github.com",
+    "port": 443,
+    "timeout_seconds": 3
+  }
+}
