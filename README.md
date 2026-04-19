@@ -10,7 +10,7 @@
 - `_layouts/`：布局（`default.html` / `post.html` / `archive.html`）
 - `_includes/`：复用片段
 - `assets/`：静态资源（CSS/JS/图片）
-- `.github/workflows/pages.yml`：Actions 自动构建与部署
+- `.github/workflows/jekyll.yml`：Actions 自动构建与部署
 
 ## 写作规范
 
@@ -28,7 +28,7 @@ description: "摘要（可选）"
 
 ## 本地预览
 
-建议使用 Ruby 3.3（与 CI 保持一致）。
+建议使用 Ruby 3.1（与 GitHub Pages/Jekyll 工作流保持一致）。
 
 ```bash
 bundle install
@@ -41,4 +41,3 @@ bundle exec jekyll serve
 
 1. 仓库 Settings → Pages → Build and deployment 选择 `GitHub Actions`
 2. 推送到 `main` 分支后会自动构建并部署
-

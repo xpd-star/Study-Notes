@@ -1,11 +1,13 @@
 <header class="header" role="banner">
   <div class="container header__inner">
-    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__text">{{ site.title }}</span>
+    </a>
     <nav class="nav" aria-label="Primary">
-      <a class="nav__link" href="{{ '/' | relative_url }}">首页</a>
-      <a class="nav__link" href="{{ '/archive/' | relative_url }}">归档</a>
-      <a class="nav__link" href="{{ '/about/' | relative_url }}">关于</a>
+      <a class="nav__link{% if page.url == '/' %} nav__link--active{% endif %}" href="{{ '/' | relative_url }}">首页</a>
+      <a class="nav__link{% if page.url == '/archive/' %} nav__link--active{% endif %}" href="{{ '/archive/' | relative_url }}">归档</a>
+      <a class="nav__link{% if page.url == '/about/' %} nav__link--active{% endif %}" href="{{ '/about/' | relative_url }}">关于</a>
     </nav>
   </div>
 </header>
-

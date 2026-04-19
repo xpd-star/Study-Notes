@@ -1,6 +1,12 @@
 <footer class="footer" role="contentinfo">
   <div class="container footer__inner">
     <span>© {{ site.time | date: "%Y" }} {{ site.title }}</span>
+    <span class="footer__links">
+      <a href="{{ '/archive/' | relative_url }}">归档</a>
+      <a href="{{ '/about/' | relative_url }}">关于</a>
+      {% if site.github and site.github.repository_url %}
+        <a href="{{ site.github.repository_url }}">GitHub</a>
+      {% endif %}
+    </span>
   </div>
 </footer>
-
